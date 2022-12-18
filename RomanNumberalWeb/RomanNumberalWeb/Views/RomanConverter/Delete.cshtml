@@ -1,0 +1,37 @@
+@model RomanNumeral.Core.Models.Logs
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Are you sure you want to delete this log?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeCreated)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TimeCreated)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Input)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Input)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Output)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Output)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="delete-button" /> |
+        <a asp-action="Index" class="back-button">Back to List</a>
+    </form>
+</div>
