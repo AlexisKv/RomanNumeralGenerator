@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=PT+Serif:wght@700&display=swap');
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Mukta', sans-serif;
+  margin-bottom: 60px;
+}
+
+.pageName{
+  position: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result{
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button{
+  text-decoration: none;
+  background-color: #E63946;
+  border-radius: 4px;
+  border-color: #E63946;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  color: #fff;
+  padding: 5px 15px;
+  opacity: 0.9;
+}
+
+.delete-button:hover{
+  opacity: 1;
+}
+
+.back-button{
+  text-decoration: none;
+  background-color: #457B9D;
+  border-radius: 4px;
+  border-color: #A8DADC;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  color: #fff;
+  padding: 5px 15px;
+  opacity: 0.90;
+}
+
+.back-button{
+  color: #A8DADC;
+  opacity: 1;
+}
+
+.convert-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #055160;
+  background-color: #20c997;
+  border-radius: 4px;
+  border-color: #A8DADC;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  margin-top: 15px;
+  padding: 4px 6px;
+  height: 33px;
+  width: 95px;
+  opacity: 0.8;
+}
+.convert-button{
+  opacity: 1;
+
+}
