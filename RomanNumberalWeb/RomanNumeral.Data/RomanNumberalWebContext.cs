@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using RomanNumeral.Core.Models;
 
-namespace RomanNumberalWeb.Data
+namespace RomanNumeral.Data
 {
-    public class RomanNumberalWebContext : DbContext
+    public class RomanNumberalWebContext : DbContext, IRomanNumeralDbContext
     {
         public RomanNumberalWebContext (DbContextOptions<RomanNumberalWebContext> options)
             : base(options)
@@ -15,5 +10,9 @@ namespace RomanNumberalWeb.Data
         }
 
         public DbSet<RomanNumeral.Core.Models.Logs> Logs { get; set; } = default!;
+        public Task<int> SaveChangesAsync()
+        {
+            return base.SaveChangesAsync();
+        }
     }
 }

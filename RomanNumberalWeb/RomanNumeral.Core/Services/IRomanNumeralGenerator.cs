@@ -1,4 +1,4 @@
-﻿namespace RomanNumberalWeb.Models.Interfaces;
+﻿namespace RomanNumeral.Core.Services;
 
 public interface IRomanNumeralGenerator
 {

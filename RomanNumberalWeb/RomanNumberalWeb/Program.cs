@@ -1,8 +1,8 @@
-using RomanNumberalWeb.Controllers;
-using RomanNumberalWeb.Models;
+using RomanNumeral.Core.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using RomanNumberalWeb.Data;
+using RomanNumeral.Core.Services;
+using RomanNumeral.Data;
+using RomanNumeral.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +12,14 @@ builder.Services.AddDbContext<RomanNumberalWebContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IRomanNumeralDbContext, RomanNumberalWebContext>();
+builder.Services.AddScoped<IDbService, DbService>();
+builder.Services.AddScoped<IEntityService<Logs>, EntityService<Logs>>();
+builder.Services.AddScoped<ILogsServices, LogsServices>();
+builder.Services.AddScoped<IRomanNumeralGenerator, GeneratorServices>();
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
