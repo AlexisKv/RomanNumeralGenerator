@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace RomanNumberalWeb.Models;
+namespace RomanNumeral.Core.Models;
 
-public class Logs 
+public class Logs : Entity
 {
-    
+    [Key]
     public int Id { get; set; }
     
     [Display(Name = "Time Created")]
