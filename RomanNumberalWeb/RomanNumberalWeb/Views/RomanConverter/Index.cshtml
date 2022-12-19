@@ -10,37 +10,36 @@
 <p>
     <a class="convert-button" asp-action="Create">Convert</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
+<div class="table-custom">
+    <div class="table-custom_row">
+            <div class="table-custom_col">
                 @Html.DisplayNameFor(model => model.TimeCreated)
-            </th>
-            <th>
+            </div>
+            <div class="table-custom_col">
                 @Html.DisplayNameFor(model => model.Input)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Output)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+            </div>
+        <div class="table-custom_col">
+            @Html.DisplayNameFor(model => model.Output)
+        </div>
+        <div class="table-custom_col">
+                  </div>
+    </div>
+   
 @foreach (var item in Model) {
-        <tr>
-            <td>
+    <div class="table-custom_row">
+    <div class="table-custom_col">
                 @Html.DisplayFor(modelItem => item.TimeCreated)
-            </td>
-            <td>
+            </div>
+         <div class="table-custom_col">
                 @Html.DisplayFor(modelItem => item.Input)
-            </td>
-            <td>
+            </div>
+    <div class="table-custom_col">
                 @Html.DisplayFor(modelItem => item.Output)
-            </td>
-            <td>
+            </div>
+    <div class="table-custom_col">
                 <a class="delete-button" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+            </div>
+  </div>
 }
-    </tbody>
-</table>
+   
+</div>
