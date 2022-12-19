@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using RomanNumeral.Core.Services;
+using RomanNumeral.Services.Exceptions;
 
 namespace RomanNumeral.Services;
 
@@ -24,6 +25,11 @@ public class GeneratorServices : IRomanNumeralGenerator
     
     public string Generate(int number)
     {
+        if (number is < 1 or > 3999)
+        {
+            throw new OutOfRangeException();
+        }
+        
         var roman = new StringBuilder();
 
         foreach (var item in NumberRomanDictionary)

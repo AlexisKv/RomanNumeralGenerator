@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RomanNumeral.Services;
+using RomanNumeral.Services.Exceptions;
 
 namespace RomanNumeral.Tests;
 
@@ -100,10 +101,22 @@ public class GeneratorServicesTest
     }
 
     [TestMethod]
-    public void GeneratorServices_11984_MMMMMMMMMMMCMLXXXIV()
+    public void GeneratorServices_3999_MMMCMXCIX()
     {
-        Assert.AreEqual("MMMMMMMMMMMCMLXXXIV", _generatorServices.Generate(11984));
+        Assert.AreEqual("MMMCMXCIX", _generatorServices.Generate(3999));
+    }
+
+    [TestMethod]
+    public void GeneratorServices_TooSmallNumber_ThrowOutOfRangeException()
+    {
+        Action act = () => _generatorServices.Generate(0);
+        act.Should().Throw<OutOfRangeException>().WithMessage("Out of range");
     }
     
-    // public void 
+    [TestMethod]
+    public void GeneratorServices_TooBigNumber_ThrowOutOfRangeException()
+    {
+        Action act = () => _generatorServices.Generate(4000);
+        act.Should().Throw<OutOfRangeException>().WithMessage("Out of range");
+    }
 }
