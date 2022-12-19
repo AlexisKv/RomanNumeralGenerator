@@ -1,0 +1,45 @@
+@model IEnumerable<RomanNumeral.Core.Models.Logs>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="pageName">History</h1>
+
+<p>
+    <a class="convert-button" asp-action="Create">Convert</a>
+</p>
+<div class="table-custom">
+    <div class="table-custom_row">
+            <div class="table-custom_col">
+                @Html.DisplayNameFor(model => model.TimeCreated)
+            </div>
+            <div class="table-custom_col">
+                @Html.DisplayNameFor(model => model.Input)
+            </div>
+        <div class="table-custom_col">
+            @Html.DisplayNameFor(model => model.Output)
+        </div>
+        <div class="table-custom_col">
+                  </div>
+    </div>
+   
+@foreach (var item in Model) {
+    <div class="table-custom_row">
+    <div class="table-custom_col">
+                @Html.DisplayFor(modelItem => item.TimeCreated)
+            </div>
+         <div class="table-custom_col">
+                @Html.DisplayFor(modelItem => item.Input)
+            </div>
+    <div class="table-custom_col">
+                @Html.DisplayFor(modelItem => item.Output)
+            </div>
+    <div class="table-custom_col">
+                <a class="delete-button" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </div>
+  </div>
+}
+   
+</div>
