@@ -1,4 +1,4 @@
-# Roman numerals converter 🧮
+#  Web Roman numerals converter 🧮
 
 * Can convert Latin numbers to roman numeral
 * Can store all requests history
